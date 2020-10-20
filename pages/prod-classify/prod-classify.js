@@ -100,9 +100,13 @@ Page({
     } else if (sts == 5) {
       // 收藏商品列表
       this.getCollectionProd()
-    }
+    } else if (sts == 8){
+	  //分类商品
+	  this.getCategoryProd(options.tagid);
+	}
   },
 
+	
   getActProd: function(url) {
     var ths = this;
     wx.showLoading();
@@ -126,6 +130,27 @@ Page({
           pages: res.pages
         });
         wx.hideLoading();
+      }
+    };
+    http.request(params);
+  },
+  
+  getCategoryProd:function(categoryId) {
+	  console.log("categoryId = ")
+	   console.log(categoryId)
+	   console.log(this.tagid)
+    //加载分类列表
+    var params = {
+      url: "/prod/pageProd",
+      method: "GET",
+      data: {
+        categoryId: categoryId
+      },
+      callBack: (res) => {
+        // console.log(res);
+        this.setData({
+          prodList: res.records,
+        });
       }
     };
     http.request(params);

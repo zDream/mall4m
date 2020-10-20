@@ -17,6 +17,7 @@ Page({
     news: [],
     taglist: [],
     sts: 0,
+	categoryList:[]
   },
   //事件处理函数
   bindViewTap: function() {
@@ -67,10 +68,24 @@ Page({
     if (id) {
       url += "&tagid=" + id + "&title=" + title;
     }
+	console.log("跳转url=",url)
     wx.navigateTo({
       url: url
     })
   },
+  
+  //跳转到分类商品页面
+ //  categoryProd:function(e){
+	// var url = '/pages/prod-classify/prod-classify?sts=' + e.currentTarget.dataset.sts;
+	// var id = e.currentTarget.dataset.id;
+	// var title = e.currentTarget.dataset.title;
+	// if (id) {
+	//   url += "&tagid=" + id + "&title=" + title;
+	// }
+	// wx.navigateTo({
+	//   url: url
+	// })
+ //  },
 
   //跳转公告列表页面
   onNewsPage: function() {
@@ -97,6 +112,7 @@ Page({
     this.getIndexImgs();
     this.getNoticeList();
     this.getTag();
+	this.getCategory();
   },
   //加载轮播图
   getIndexImgs() {
@@ -130,6 +146,7 @@ Page({
   },
 
 
+
   // 加载商品标题分组列表
   getTag() {
     var params = {
@@ -146,6 +163,28 @@ Page({
       }
     };
     http.request(params);
+  },
+  
+  /**
+   * 获取一级分类信息
+   */
+  getCategory(){
+	var ths = this;
+	//加载分类列表
+	var params = {
+	  url: "/category/categoryInfo",
+	  method: "GET",
+	  data: {
+	    parentId: ''
+	  },
+	  callBack: function (res) {
+	    // console.log(res);
+	    ths.setData({
+	      categoryList: res,
+	    });
+	  }
+	};
+	http.request(params);  
   },
 
   getTagProd(id, index) {

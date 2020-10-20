@@ -22,7 +22,7 @@
     </swiper>
     <!-- end swiper -->
 
-    <view class='cat-item'>
+    <!-- <view class='cat-item'>
       <view class='item' bindtap='toClassifyPage' data-sts="1">
         <image src='../../images/icon/newProd.png'></image>
         <text>手机数码</text>
@@ -39,7 +39,16 @@
         <image src='../../images/icon/newprods.png'></image>
         <text>美味零食</text>
       </view>
-    </view>
+    </view> -->
+	<view class='cat-item'>
+		<block wx:for='{{categoryList}}' wx:for-item="category" wx:for-index="idx">
+			<view class='item' wx:if="{{idx < 5}}" bindtap="toClassifyPage" 
+			data-id="{{category.categoryId}}" data-title="{{category.categoryName}}" data-sts="8">
+			  <image src='{{category.pic}}'></image>
+			  <text>{{category.categoryName}}</text>
+			</view>
+		</block>
+	</view>
 
     <!-- 消息播放 -->
     <view class='message-play' bindtap='onNewsPage'>
