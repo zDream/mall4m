@@ -25,19 +25,19 @@
     <view class='cat-item'>
       <view class='item' bindtap='toClassifyPage' data-sts="1">
         <image src='../../images/icon/newProd.png'></image>
-        <text>新品推荐</text>
+        <text>手机数码</text>
       </view>
       <view class='item' bindtap='toClassifyPage' data-sts="2">
         <image src='../../images/icon/timePrice.png'></image>
-        <text>限时特惠</text>
+        <text>美妆护肤</text>
       </view>
       <view class='item' bindtap='toClassifyPage' data-sts="3">
         <image src='../../images/icon/neweveryday.png'></image>
-        <text>每日疯抢</text>
+        <text>运动服饰</text>
       </view>
       <view class='item' bindtap='toCouponCenter'>
         <image src='../../images/icon/newprods.png'></image>
-        <text>领优惠券</text>
+        <text>美味零食</text>
       </view>
     </view>
 

@@ -9,10 +9,10 @@
       <open-data type="userNickName"></open-data>
     </view>
   </view>
-  <view class='binding-phone'>
+ <!-- <view class='binding-phone'>
     <text class='show-tip'>绑定手机号后可查看订单和领取优惠券，</text>
     <text class='gotobinding' bindtap='toBindingPhone'>去绑定</text>
-  </view>
+  </view> -->
   <!-- end 用户信息 -->
 
   <view class='list-cont'>
@@ -66,7 +66,7 @@
     </view>
 
     <view class='my-menu'>
-      <view class='memu-item' bindtap='toDistCenter'>
+      <!-- <view class='memu-item' bindtap='toDistCenter'>
         <view class="i-name">
           <image src='../../images/icon/promotion.png'></image>
           <text>分销中心</text>
@@ -86,7 +86,7 @@
           <text>我的优惠券</text>
         </view>
         <view class='arrowhead'></view>
-      </view>
+      </view> -->
       <view class='memu-item' bindtap='toAddressList'>
         <view class="i-name">
           <image src='../../images/icon/myAddr.png'></image>
