@@ -130,14 +130,14 @@ function getCartCount() {
     callBack: function(res) {
       if (res > 0) {
         wx.setTabBarBadge({
-          index: 2,
+          index: 1,
           text: res + "",
         })
         var app = getApp();
         app.globalData.totalCartCount = res;
       } else {
         wx.removeTabBarBadge({
-          index: 2
+          index: 1
         })
         var app = getApp();
         app.globalData.totalCartCount = 0;

@@ -184,12 +184,13 @@ page {
   margin-top:20rpx;
   background: #fff;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   padding:30rpx 0 10rpx 0;
   font-size: 12px;
 }
 .prod-col .col-item{
   text-align: center;
+  margin-left: 40rpx;
 }
 .prod-col .col-item .num{
   font-size: 16px;
